@@ -420,6 +420,7 @@ namespace System.Deployment.Internal.CodeSigning
             int hr = Win32._AxlGetIssuerPublicKeyHash(signerCert.Handle, ref pIssuerKeyHash);
             if (hr != Win32.S_OK)
             {
+                Console.WriteLine($"Failed to get issuer public key hash for \n{signerCert}");
                 throw new CryptographicException(hr);
             }
 
